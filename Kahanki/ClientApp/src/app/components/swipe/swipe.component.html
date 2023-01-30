@@ -1,0 +1,56 @@
+<div
+  *ngIf="candidate.id != ''"
+  class="container flex justify-center items-center mt-20"
+>
+  <div class="w-2/3 h-600px flex z-0 white-card">
+    <div class="h-full w-1/2 flex-col justify-between">
+      <div
+        class="h-full w-full -z-10 bg-cover bg-no-repeat bg-[url('https://cdn.7days.ru/pic/377/013A2F614B4A245A4325861C005DF4BB/568865/90.jpg')]"
+      ></div>
+      <div
+        class="relative flex flex-col pl-2.5 justify-between mr-10 mb-10 -top-10 font-white"
+      >
+        <span class="text-lg font-medium"
+          >{{ candidate.name }}, {{ candidate.age }}</span
+        >
+      </div>
+    </div>
+    <div class="w-1/2 p-2.5 pb-5 flex flex-col justify-between">
+      <div class="common flex flex-col">
+        <h3 class="text-lg font-medium">Общая информация</h3>
+        <span class="tex"> {{ candidate.job }} </span>
+        <span class="tex"> {{ candidate.education }} </span>
+      </div>
+      <div class="common items-center">
+        <h3 class="text-lg font-medium">Обо мне</h3>
+        <span>{{ candidate.description }}</span>
+      </div>
+      <div class="common items-center">
+        <h3 class="text-lg font-medium"></h3>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col justify-center">
+    <div class="w-24 h-24" type="button" (click)="Like()" value="Like">
+      <img class="h-full p-2" src="./assets/like.png" alt="" />
+    </div>
+    <div
+      class="w-24 h-24"
+      type="button"
+      (click)="Superlike()"
+      value="Superlike"
+    >
+      <img class="h-full p-2" src="./assets/superLike.png" alt="" />
+    </div>
+    <div class="w-24 h-24" type="button" (click)="Disike()" value="Dislike">
+      <img class="h-full p-3" src="./assets/cross.png" alt="" />
+    </div>
+  </div>
+</div>
+<div
+  *ngIf="candidate.id == ''"
+  class=" h-600px flex white-card items-center justify-center"
+>
+  <p>В данный момент анкеты отсутствуют</p>
+</div>

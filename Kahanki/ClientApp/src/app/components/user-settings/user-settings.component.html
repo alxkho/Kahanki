@@ -1,0 +1,139 @@
+<div class="">
+  <div class="mt-4 md:col-span-2 md:mt-0">
+    <div class="bg-white overflow-hidden shadow sm:rounded-md">
+      <div class="px-4 py-5 sm:p-6">
+        <div class="grid grid-cols-4 gap-8">
+          <div class="col-span-4 sm:col-span-2">
+            <label for="first-name" class="block font-medium">Имя</label>
+            <input
+              [(ngModel)]="settings.realName"
+              type="text"
+              name="first-name"
+              id="first-name"
+              autocomplete="given-name"
+              class="mt-1 py-1.5 px-3 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </div>
+
+          <div class="col-span-2 sm:col-span-1">
+            <label for="age" class="block font-medium">Возраст</label>
+            <input
+              [(ngModel)]="settings.age"
+              type="text"
+              name="age"
+              id="age"
+              autocomplete="age"
+              class="mt-1 py-1.5 px-3 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </div>
+
+          <div class="col-span-2 sm:col-span-1">
+            <label for="sex" class="block font-medium">Пол</label>
+            <select
+              [(ngModel)]="settings.sex"
+              id="sex"
+              name="sex"
+              autocomplete="sex"
+              class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+            >
+              <option [value]="0">Мужской</option>
+              <option [value]="1">Женский</option>
+              <option [value]="2">Другой</option>
+            </select>
+          </div>
+
+          <div class="col-span-4 sm:col-span-2">
+            <label for="job" class="block font-medium">Работа</label>
+            <input
+              [(ngModel)]="settings.job"
+              type="text"
+              name="job"
+              id="job"
+              autocomplete="job"
+              class="mt-1 py-1.5 px-3 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </div>
+
+          <div class="col-span-4 sm:col-span-2">
+            <label for="education" class="block font-medium">Образование</label>
+            <input
+              [(ngModel)]="settings.education"
+              type="text"
+              name="education"
+              id="education"
+              autocomplete="education"
+              class="mt-1 py-1.5 px-3 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </div>
+
+          <div class="col-span-4 row-start-3">
+            <label for="about" class="block font-medium">О себе</label>
+            <textarea
+              [(ngModel)]="settings.description"
+              id="about"
+              name="about"
+              rows="3"
+              class="mt-1 py-1.5 px-3 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              placeholder=""
+            ></textarea>
+          </div>
+          
+          <div class="row-start-4 col-span-4" aria-hidden="true">
+            <div class="py-2">
+              <div class="border-t border-gray-light block font-medium"></div>
+              <label class="block font-medium text-center text-lg">Ищу:</label>
+            </div>
+          </div>
+
+          <div class="col-span-4 sm:col-span-2 lg:col-span-1 row-start-5">
+            <label for="preferences" class="block font-medium">Пол</label>
+            <select
+              [(ngModel)]="settings.preferences"
+              id="preferences"
+              name="preferences"
+              autocomplete="preferences"
+              class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+            >
+              <option [value]="0">Мужской</option>
+              <option [value]="1">Женский</option>
+              <option [value]="2">Другой</option>
+            </select>
+          </div>
+
+          <div class="col-span-2 sm:col-span-1 row-start-5">
+            <label for="region" class="block font-medium">Возраст от</label>
+            <input
+              [(ngModel)]="settings.ageFrom"
+              type="text"
+              name="region"
+              id="region"
+              autocomplete="address-level1"
+              class="mt-1 py-1.5 px-3 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </div>
+
+          <div class="col-span-2 sm:col-span-1 row-start-5">
+            <label for="postal-code" class="block font-medium">до</label>
+            <input
+              [(ngModel)]="settings.ageTo"
+              type="text"
+              name="postal-code"
+              id="postal-code"
+              autocomplete="postal-code"
+              class="mt-1 py-1.5 px-3 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center px-4 py-3 text-right sm:px-6">
+        <input
+          type="button"
+          (click)="Save()"
+          value="Сохранить"
+          class="inline-flex justify-center rounded-md border border-transparent bg-orange py-2 px-4 font-light text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        />
+      </div>
+    </div>
+  </div>
+</div>

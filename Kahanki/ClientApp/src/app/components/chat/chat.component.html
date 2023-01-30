@@ -1,0 +1,52 @@
+<div class="white-card h-3/4 flex flex-col p-3 mt-5 sm:mt-10">
+  <div class="flex items-center mb-2">
+    <div
+      class="bg-orange m-2 w-16 h-16  rounded-full bg-cover bg-no-repeat bg-[url('https://koshka.top/uploads/posts/2021-12/1638771511_1-koshka-top-p-milogo-kotika-v-shapochke-1.jpg')]"
+    ></div>
+    <div class="ml-2">{{ secondUserName }}</div>
+  </div>
+
+  <div class="h-96 overflow-y-scroll">
+    <div
+      id="messages"
+      *ngFor="let message of chat.messages"
+      class="my-2 w-full flex"
+      [style.justify-content]="
+        message.senderId == currentUserId ? 'end' : 'start'
+      "
+    >
+      <div
+        class="message bg-orange bg-opacity-10 flex flex-col p-2 min-w-4/12 max-w-3/4 rounded-sm"
+        *ngIf="message.senderId != currentUserId"
+      >
+        <div class="break-words w-full">{{ message.content }}</div>
+        <div class="text-ssm self-end text-gray-dark">{{ message.created | date : "shortTime" }}</div>
+      </div>
+
+      <div
+        class="message bg-orange bg-opacity-50 flex flex-col p-2 min-w-4/12 max-w-3/4 rounded-sm"
+        *ngIf="message.senderId == currentUserId"
+      >
+        <div class="break-words w-full">{{ message.content }}</div>
+        <div class="text-ssm self-end text-gray-dark">
+          {{ message.created | date : "shortTime" }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex mt-3" id="messageInput">
+    <input
+      [(ngModel)]="currentMessage"
+      (keyup.enter)="Send()"
+      placeholder="Сообщение"
+      class="text-box p-2 mr-2 w-full block rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+    />
+    <input
+      type="button"
+      (click)="Send()"
+      value="Отправить"
+      class="inline-flex justify-center rounded-md border border-transparent bg-orange py-2 px-4 font-light text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+    />
+  </div>
+</div>
