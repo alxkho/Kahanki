@@ -5,45 +5,45 @@
   <div class="w-2/3 h-600px flex z-0 white-card">
     <div class="h-full w-1/2 flex-col justify-between">
       <div
-        class="h-full w-full -z-10 bg-cover bg-no-repeat bg-[url('https://cdn.7days.ru/pic/377/013A2F614B4A245A4325861C005DF4BB/568865/90.jpg')]"
+        class="h-full w-full -z-10 bg-cover bg-no-repeat bg-[url('https://koshka.top/uploads/posts/2021-12/1638771511_1-koshka-top-p-milogo-kotika-v-shapochke-1.jpg')]"
       ></div>
       <div
-        class="relative flex flex-col pl-2.5 justify-between mr-10 mb-10 -top-10 font-white"
+        class="relative flex flex-col bg-gradient-to-r from-orange to-gray-600 bg-opacity-30 w-full pl-2.5 justify-between mr-10 -top-10 text-white"
       >
-        <span class="text-lg font-medium"
+        <span class="text-[20px] font-semibold pt-2 pb-1"
           >{{ candidate.name }}, {{ candidate.age }}</span
         >
       </div>
     </div>
     <div class="w-1/2 p-2.5 pb-5 flex flex-col justify-between">
       <div class="common flex flex-col">
-        <h3 class="text-lg font-medium">Общая информация</h3>
-        <span class="tex"> {{ candidate.job }} </span>
-        <span class="tex"> {{ candidate.education }} </span>
+        <h1 class="text-[20px] font-semibold mb-2">Общая информация</h1>
+        <span class="tex">Работа: {{ candidate.job }} </span>
+        <span class="tex">Образование: {{ candidate.education }} </span>
       </div>
       <div class="common items-center">
-        <h3 class="text-lg font-medium">Обо мне</h3>
+        <h1 class="text-[20px] font-semibold mt-4 mb-2">Обо мне</h1>
         <span>{{ candidate.description }}</span>
       </div>
       <div class="common items-center">
-        <h3 class="text-lg font-medium"></h3>
+        <h1 class="text-[20px] font-semibold"></h1>
         <span></span>
       </div>
     </div>
   </div>
   <div class="flex flex-col justify-center">
-    <div class="w-24 h-24" type="button" (click)="Like()" value="Like">
+    <div class="my-2 w-24 h-24" type="button" (click)="Like()" value="Like">
       <img class="h-full p-2" src="./assets/like.png" alt="" />
     </div>
     <div
-      class="w-24 h-24"
+      class="my-2 w-24 h-24"
       type="button"
       (click)="Superlike()"
       value="Superlike"
     >
       <img class="h-full p-2" src="./assets/superLike.png" alt="" />
     </div>
-    <div class="w-24 h-24" type="button" (click)="Disike()" value="Dislike">
+    <div class="my-2 w-24 h-24" type="button" (click)="Disike()" value="Dislike">
       <img class="h-full p-3" src="./assets/cross.png" alt="" />
     </div>
   </div>
